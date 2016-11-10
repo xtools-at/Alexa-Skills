@@ -9,15 +9,17 @@
  */
 module.exports = app => {
 
-  // Hello
-  const helloUtterances = [
-    'Hallo',
-    'Hallo Hermann'
+  // Who are you? / What's your name?
+  const whoUtterances = [
+    'Wer bist du',
+    'Wer bist denn du',
+    'Wie heisst du',
+    'Wie ist dein Name'
   ];
 
-  app.intent('HelloIntent', helloUtterances, () => {
+  app.intent('WhatsYourNameIntent', whoUtterances, () => {
     return {
-      text: 'Hallo, wer auch immer du bist',
+      text: 'Ich bin Hermann, die Stimme in deinem Kopf',
       end: false
     };
   });

@@ -9,17 +9,20 @@
  */
 module.exports = app => {
 
-  // Hello
-  const helloUtterances = [
-    'Hallo',
-    'Hallo Hermann'
+  // How you doing?
+  const howYouDoingUtterances = [
+    'Wie gehts',
+    'Wie geht es dir',
+    'Alles gut',
+    'Was geht ab'
   ];
 
-  app.intent('HelloIntent', helloUtterances, () => {
+  app.intent('HowYouDoingIntent', howYouDoingUtterances, () => {
     return {
-      text: 'Hallo, wer auch immer du bist',
+      text: 'Mir geht es wunderbar, danke der Nachfrage',
       end: false
     };
   });
 
 };
+

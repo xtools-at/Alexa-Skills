@@ -13,22 +13,23 @@ module.exports = app => {
   app.customSlot('Item', Object.keys(dictionary.items));
 
   const utterances = [
-    'Search for {item:Item}',
-    'What is {item:Item}',
-    'Describe me {item:Item}'
+    'Suche nach {item:Item}',
+    'Suche {item:Item}',
+    'Was ist {item:Item}',
+    'Beschreibe {item:Item}'
   ];
 
   app.intent('SearchIntent', utterances, (slots, attrs, data, done) => {
     if (!slots.item) {
-      done('I did not understand your search item');
+      done('Das habe ich leider nicht verstanden');
       return;
     }
 
     dictionary.search(slots.item).then(result => {
       if (result) {
-        done(`${slots.item} is ${result}`);
+        done(`${slots.item} ist ${result}`);
       } else {
-        done(`No match found for ${slots.item}`);
+        done(`Ich weiß leider nichts zu ${slots.item}`);
       }
     });
   });

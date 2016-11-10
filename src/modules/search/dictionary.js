@@ -1,9 +1,9 @@
 /* global setTimeout */
 const items = {
-  'car': 'a road vehicle, typically with four wheels',
-  'bike': 'a bicycle or motorcycle',
-  'house': 'a building for human habitation',
-  'pool': 'a small area of still water, typically one formed naturally'
+  'auto': 'ein vehikel mit fünf rädern',
+  'fahrrad': 'ein drahtesel eben',
+  'haus': 'ein gebäude in dem menschen wohnen',
+  'pool': 'da kann man drinnen schwimmen'
 };
 
 module.exports = {
