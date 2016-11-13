@@ -4,13 +4,13 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('Hermann');
+const app = alexia.createApp('Geld');
 
 /**
  * Register callback to be executed once app is started without any intent.
  * Example invocation: 'Alexa, start <my-app-name>'
  */
-app.onStart(() => 'Hallo, ich bin Hermann');
+app.onStart(() => 'Frage mich nach Wechselkursen oder wieviel einer Waehrung in einer anderen ausmacht');
 
 // Register all intents matching specified pattern
 app.registerIntents('src/modules/**/*-intent.js');
