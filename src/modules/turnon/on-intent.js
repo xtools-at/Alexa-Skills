@@ -15,7 +15,8 @@ module.exports = app => {
     'an',
     'ein',
     'einschalten',
-    'licht'
+    'licht',
+    'mach licht'
   ];
 
   app.intent('OnIntent', onUtterances, () => {

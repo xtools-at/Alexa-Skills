@@ -1,6 +1,12 @@
 /**
- * Quirky implementation of a Nightlight :)
-*/
+ * Register HelloIntent
+ * Example invocation 1:
+ *      - 'Alexa, ask <my-app-name> to say hello'
+ *
+ * Example invocation 2:
+ *      - 'Alexa, start <my-app-name>'
+ *      - 'hello'
+ */
 module.exports = app => {
 
   const minUtterances = [
@@ -25,7 +31,11 @@ module.exports = app => {
     '{num:Number} Minute einschalten',
     '{num:Number} Minute ein',
     'schalte {num:Number} Minute ein',
-    '{num:Number} Minute an'
+    '{num:Number} Minute an',
+    '{num:Number} Minuten',
+    'fuer {num:Number} Minuten',
+    '{num:Number} Minute',
+    'fuer {num:Number} Minute'
   ];
 
   app.intent('MinutesIntent', minUtterances, (slots) => {
@@ -52,5 +62,7 @@ module.exports = app => {
         text: `<speak>${audio}</speak>`
       };
     }
+
   });
+
 };

@@ -20,7 +20,9 @@ module.exports = app => {
     '{num:Number} Sekunden einschalten',
     '{num:Number} Sekunden ein',
     'schalte {num:Number} Sekunden ein',
-    '{num:Number} Sekunden an'
+    '{num:Number} Sekunden an',
+    '{num:Number} Sekunden',
+    'fuer {num:Number} Sekunden'
   ];
 
   app.intent('SecondsIntent', secUtterances, (slots) => {
@@ -34,7 +36,7 @@ module.exports = app => {
       var num = slots.num;
       var audio = '';
 
-      console.log('debug 1: ', num, num > 0);
+      // console.log('debug 1: ', num, num > 0);
 
       if (num > 0 && num <= 2) {
         audio = `<audio src="${baseUrl + 's0' + num + 's.mp3'}" />`;
@@ -73,9 +75,9 @@ module.exports = app => {
         audio += `<audio src="${baseUrl + 's08s.mp3'}" />`;
       }
 
-      console.log('debug 3: ', audio);
+      // console.log('debug 3: ', audio);
       var ssml = `<speak>${audio}</speak>`;
-      console.log('debug 4: ', ssml);
+      // console.log('debug 4: ', ssml);
 
       return {
         ssml: true,
