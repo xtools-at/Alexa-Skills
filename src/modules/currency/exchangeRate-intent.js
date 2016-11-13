@@ -37,7 +37,19 @@ module.exports = app => {
     'Wieviel ist der Wechselkurs fuer {currencyInput:Currency} auf {currencyTarget:Currency}',
     'Wieviel ist der Wechselkurs fuer {currencyInput:Currency} und {currencyTarget:Currency}',
     'Wieviel ist der Wechselkurs zwischen {currencyInput:Currency} auf {currencyTarget:Currency}',
-    'Wieviel ist der Wechselkurs zwischen {currencyInput:Currency} und {currencyTarget:Currency}'
+    'Wieviel ist der Wechselkurs zwischen {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Kurs von {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Kurs von {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Kurs fuer {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Kurs fuer {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Kurs zwischen {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Kurs zwischen {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Wechselkurs von {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Wechselkurs von {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Wechselkurs fuer {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Wechselkurs fuer {currencyInput:Currency} und {currencyTarget:Currency}',
+    'nach dem Wechselkurs zwischen {currencyInput:Currency} auf {currencyTarget:Currency}',
+    'nach dem Wechselkurs zwischen {currencyInput:Currency} und {currencyTarget:Currency}'
   ];
 
   app.intent('ExchangeRateIntent', exUtterances, (slots, attrs, data, done) => {
