@@ -1,12 +1,5 @@
-/**
- * Register HelloIntent
- * Example invocation 1:
- *      - 'Alexa, ask <my-app-name> to say hello'
- *
- * Example invocation 2:
- *      - 'Alexa, start <my-app-name>'
- *      - 'hello'
- */
+const answer = require('./answer');
+
 module.exports = app => {
 
   const mdUtterances = [
@@ -24,20 +17,15 @@ module.exports = app => {
 
   app.intent('MultiDiceIntent', mdUtterances, (slots) => {
 
-    if {!slots.num} {
+    if (!slots.num) {
       return {
         text: 'Nochmals bitte',
         end: false
       };
     } else {
-      var min, max;
-      min = 1 * num;
-      max = 6 * num;
-
-      var value = Math.floor(Math.random() * (max - min + 1) + min);
-
       return {
-        text: value
+        ssml: true,
+        text: answer.create(slots.num, 6)
       };
 
     }

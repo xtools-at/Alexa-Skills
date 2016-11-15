@@ -1,12 +1,5 @@
-/**
- * Register HelloIntent
- * Example invocation 1:
- *      - 'Alexa, ask <my-app-name> to say hello'
- *
- * Example invocation 2:
- *      - 'Alexa, start <my-app-name>'
- *      - 'hello'
- */
+const answer = require('./answer');
+
 module.exports = app => {
 
   const sdUtterances = [
@@ -21,14 +14,9 @@ module.exports = app => {
 
   app.intent('SingleDiceIntent', sdUtterances, () => {
 
-    var min, max;
-    min = 1;
-    max = 6;
-
-    var value = Math.floor(Math.random() * (max - min + 1) + min);
-
     return {
-      text: value
+      ssml: true,
+      text: answer.create(1, 6)
     };
   });
 
