@@ -86,7 +86,7 @@ const currencyNamesPlural = {
   'USD': 'U.S. Dollar',
   'EUR': 'Euro',
   'AUD': 'Australische Dollar',
-  'BGN': 'Bulgarísche Lew',
+  'BGN': 'Bulgarische Lew',
   'BRL': 'Brasilianische Real',
   'CAD': 'Kanadische Dollar',
   'CHF': 'Schweizer Franken',
@@ -155,10 +155,5 @@ const currencyNamesSingular = {
 module.exports = {
   currencies,
   currencyNamesPlural,
-  currencyNamesSingular,
-  search: currency => new Promise(resolve => {
-    setTimeout(() => {
-      resolve(currencies[currency]);
-    }, 5);
-  })
+  currencyNamesSingular
 };
