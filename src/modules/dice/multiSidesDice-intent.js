@@ -22,7 +22,7 @@ module.exports = app => {
     '{num:Number} Wuerfel mit {sides:Number} Seiten'
   ];
 
-  app.intent('MultiSideDiceIntent', msdUtterances, () => {
+  app.intent('MultiSideDiceIntent', msdUtterances, (slots) => {
 
     if {!slots.num || !slots.sides} {
       return {
