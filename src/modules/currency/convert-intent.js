@@ -24,8 +24,10 @@ module.exports = app => {
 
   app.intent('ConvertIntent', convUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyInput || !slots.currencyTarget) {
-      done('Eine der Waehrungen kenne ich nicht');
-      return;
+      return {
+        text: 'Eine der Waehrungen kenne ich nicht',
+        end: false
+      };
     } else {
 
       var num;
@@ -58,7 +60,10 @@ module.exports = app => {
 
           done(`${num} ${currencyIn} ${connection} ${convertedNumber} ${currencyTarget}`);
         } else {
-          done('Entschuldige, da hat was nicht geklappt');
+          done({
+            text: 'Entschuldige, da hat was nicht geklappt',
+            end: false
+          });
         }
       });
 

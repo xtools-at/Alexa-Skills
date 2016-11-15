@@ -54,8 +54,10 @@ module.exports = app => {
 
   app.intent('ExchangeRateIntent', exUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyInput || !slots.currencyTarget) {
-      done('Eine der Waehrungen kenne ich nicht');
-      return;
+      return {
+        text: 'Eine der Waehrungen kenne ich nicht',
+        end: false
+      };
     } else {
 
       var inputC = dictionary.currencies[slots.currencyInput];
@@ -71,7 +73,10 @@ module.exports = app => {
 
           done(`Ein ${currencyIn} sind ${rate} ${currencyTarget}`);
         } else {
-          done('Entschuldige, da hat was nicht geklappt');
+          done({
+            text: 'Entschuldige, da hat was nicht geklappt',
+            end: false
+          });
         }
       });
 

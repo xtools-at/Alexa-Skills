@@ -42,8 +42,10 @@ module.exports = app => {
 
   app.intent('EuroRateIntent', eurUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyTarget) {
-      done('Diese Waehrung kenne ich nicht');
-      return;
+      return {
+        text: 'Diese Waehrung kenne ich nicht',
+        end: false
+      };
     } else {
       var targetC = dictionary.currencies[slots.currencyTarget];
 
@@ -56,7 +58,10 @@ module.exports = app => {
 
           done(`Ein Euro sind ${rate} ${currencyTarget}`);
         } else {
-          done('Entschuldige, da hat was nicht geklappt');
+          done({
+            text: 'Entschuldige, da hat was nicht geklappt',
+            end: false
+          });
         }
       });
 
