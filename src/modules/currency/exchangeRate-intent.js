@@ -11,7 +11,6 @@ const axios = require('axios');
  *      - 'What is <item>?'
  */
 module.exports = app => {
-  // app.customSlot('Currency', Object.keys(dictionary.currencies));
 
   const exUtterances = [
     'Was ist der Kurs von {currencyInput:Currency} auf {currencyTarget:Currency}',

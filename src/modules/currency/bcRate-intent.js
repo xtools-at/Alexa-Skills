@@ -14,6 +14,7 @@ module.exports = app => {
   // app.customSlot('Currency', Object.keys(dictionary.currencies));
 
   const eurUtterances = [
+    '',
     'Was ist der Kurs von {currencyTarget:Currency}',
     'Was ist der Kurs fuer {currencyTarget:Currency}',
     'Was ist der Kurs auf {currencyTarget:Currency}',
@@ -40,7 +41,7 @@ module.exports = app => {
     'nach dem Wechselkurs auf {currencyTarget:Currency}'
   ];
 
-  app.intent('EuroRateIntent', eurUtterances, (slots, attrs, data, done) => {
+  app.intent('BitcoinRateIntent', eurUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyTarget) {
       return {
         text: 'Diese Waehrung kenne ich nicht',

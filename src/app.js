@@ -4,17 +4,16 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('Wechselstube');
+const app = alexia.createApp('BitcoinKurse');
 
 /**
  * Register callback to be executed once app is started without any intent.
  * Example invocation: 'Alexa, start <my-app-name>'
  */
 app.onStart(() => {
-	return {
-		text: 'Frage mich nach Wechselkursen oder wieviel einer Waehrung in einer anderen ausmacht',
-		end: false
-	};
+  return {
+    //text: 'Frage mich nach dem Bitcoin Kurs, wieviel einer Waehrung in Bitcoin ausmacht oder anders herum'
+  };
 });
 
 // Register all intents matching specified pattern
