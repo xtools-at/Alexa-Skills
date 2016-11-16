@@ -58,6 +58,18 @@ module.exports = app => {
             connection = 'ist';
           }
 
+          // error handling
+          if (num !== num || convertedNumber !== convertedNumber || !currencyIn || typeof currencyIn === 'undefined' || !currencyTarget || typeof currencyTarget === 'undefined') {
+            done({
+              text: 'Ich habe dich nicht richtig verstanden',
+              end: false
+            });
+          }
+
+          // replace dots with commas
+          num = '' + num.replace('.', ',');
+          convertedNumber = '' + convertedNumber.replace('.', ',');
+
           done(`${num} ${currencyIn} ${connection} ${convertedNumber} ${currencyTarget}`);
         } else {
           done({

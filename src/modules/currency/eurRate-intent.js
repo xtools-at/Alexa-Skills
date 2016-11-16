@@ -56,6 +56,17 @@ module.exports = app => {
 
           var currencyTarget = dictionary.currencyNamesPlural[targetC];
 
+          // error handling
+          if (rate !== rate || !currencyTarget || typeof currencyTarget === 'undefined') {
+            done({
+              text: 'Ich habe dich nicht richtig verstanden',
+              end: false
+            });
+          }
+
+          // replace dots with commas
+          rate = '' + rate.replace('.', ',');
+
           done(`Ein Euro sind ${rate} ${currencyTarget}`);
         } else {
           done({
