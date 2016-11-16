@@ -10,7 +10,10 @@ const answer = {
     var diceValue = Math.floor(Math.random() * (max - min + 1) + min);
     var outputSpeech = `<speak><audio src="https://s3.eu-central-1.amazonaws.com/assetsalexa/wuerfel/dice.mp3" />${diceValue}</speak>`;
 
-    return outputSpeech;
+    return {
+      ssml: true,
+      text: outputSpeech
+    };
   }
 };
 

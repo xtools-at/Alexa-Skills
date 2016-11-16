@@ -23,11 +23,7 @@ module.exports = app => {
         end: false
       };
     } else {
-      return {
-        ssml: true,
-        text: answer.create(slots.num, 6)
-      };
-
+      return answer.create(slots.num, 6);
     }
   });
 

@@ -12,10 +12,7 @@ const answer = require('./modules/dice/answer');
  * Example invocation: 'Alexa, start <my-app-name>'
  */
 app.onStart(() => {
-  return {
-    ssml: true,
-    text: answer.create(1, 6)
-  };
+  return answer.create(1, 6);
 });
 
 // Register all intents matching specified pattern

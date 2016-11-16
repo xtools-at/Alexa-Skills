@@ -13,11 +13,7 @@ module.exports = app => {
   ];
 
   app.intent('SingleDiceIntent', sdUtterances, () => {
-
-    return {
-      ssml: true,
-      text: answer.create(1, 6)
-    };
+    return answer.create(1, 6);
   });
 
 };
