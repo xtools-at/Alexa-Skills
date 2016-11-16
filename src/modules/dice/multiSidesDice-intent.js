@@ -1,5 +1,3 @@
-const answer = require('./answer');
-
 module.exports = app => {
 
   const msdUtterances = [
@@ -23,7 +21,26 @@ module.exports = app => {
         end: false
       };
     } else {
-      return answer.create(slots.num, slots.sides);
+      var dices, sides, min, max;
+
+      dices = slots.num;
+      sides = slots.sides;
+
+      min = 1 * dices;
+      max = sides * dices;
+
+      var diceValue = Math.floor(Math.random() * (max - min + 1) + min);
+      var outputSpeech = `<speak><audio src="https://s3.eu-central-1.amazonaws.com/assetsalexa/wuerfel/dice.mp3" />${diceValue}</speak>`;
+
+      // check for NaN
+      if (diceValue !== diceValue) {
+        outputSpeech = `<speak>Da ist was schiefgelaufen</speak>`;
+      }
+
+      return {
+        ssml: true,
+        text: outputSpeech
+      };
     }
 
   });

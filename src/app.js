@@ -5,14 +5,26 @@
 const alexia = require('alexia');
 const app = alexia.createApp('Wuerfel');
 
-const answer = require('./modules/dice/answer');
-
 /**
  * Register callback to be executed once app is started without any intent.
  * Example invocation: 'Alexa, start <my-app-name>'
  */
 app.onStart(() => {
-  return answer.create(1, 6);
+  var dices, sides, min, max;
+
+  dices = 1;
+  sides = 6;
+
+  min = 1 * dices;
+  max = sides * dices;
+
+  var diceValue = Math.floor(Math.random() * (max - min + 1) + min);
+  var outputSpeech = `<speak><audio src="https://s3.eu-central-1.amazonaws.com/assetsalexa/wuerfel/dice.mp3" />${diceValue}</speak>`;
+
+  return {
+    ssml: true,
+    text: outputSpeech
+  };
 });
 
 // Register all intents matching specified pattern
