@@ -4,7 +4,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('BitcoinKurse');
+const app = alexia.createApp('Bitcoin');
 
 /**
  * Register callback to be executed once app is started without any intent.
