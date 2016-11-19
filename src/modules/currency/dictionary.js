@@ -1,4 +1,5 @@
-/* global setTimeout */
+'use strict';
+
 const currencies = {
   'dollar': 'USD',
   'amerikanische dollar': 'USD',

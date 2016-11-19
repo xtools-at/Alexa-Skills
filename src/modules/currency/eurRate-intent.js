@@ -1,17 +1,9 @@
+'use strict';
+
 const dictionary = require('./dictionary');
 const axios = require('axios');
 
-/**
- * Register SearchIntent
- * Example invocation 1:
- *      - 'Alexa, ask <my-app-name> what is <Item>'
- *
- * Example invocation 2:
- *      - 'Alexa, start <my-app-name>'
- *      - 'What is <item>?'
- */
 module.exports = app => {
-  // app.customSlot('Currency', Object.keys(dictionary.currencies));
 
   const eurUtterances = [
     'Was ist der Kurs von {currencyTarget:Currency}',
