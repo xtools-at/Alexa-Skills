@@ -2,23 +2,21 @@
 module.exports = app => {
 
   const mdUtterances = [
-    'wuerfel mit {num:Number} Wuerfeln',
-    'wuerfel {num:Number} Wuerfel',
-    'wuerfle mit {num:Number} Wuerfeln',
-    'wuerfle {num:Number} Wuerfel',
-    'rolle mit {num:Number} Wuerfeln',
-    'rolle {num:Number} Wuerfel',
-    'roll {num:Number} Wuerfel',
-    'wirf mit {num:Number} Wuerfeln',
-    'wirf {num:Number} Wuerfel',
-    '{num:Number} Wuerfel'
+    '{num:Number} dice',
+    '{num:Number} die',
+    'roll {num:Number} dice',
+    'roll {num:Number} die',
+    'throw {num:Number} dice',
+    'throw {num:Number} die',
+    'play {num:Number} dice',
+    'play {num:Number} die'
   ];
 
   app.intent('MultiDiceIntent', mdUtterances, (slots) => {
 
     if (!slots.num) {
       return {
-        text: 'Nochmals bitte',
+        text: 'I did not understand you, please repeat',
         end: false
       };
     } else {
@@ -35,7 +33,7 @@ module.exports = app => {
 
       // check for NaN
       if (diceValue !== diceValue) {
-        outputSpeech = `<speak>Da ist was schiefgelaufen</speak>`;
+        outputSpeech = `<speak>I did not understand you</speak>`;
       }
 
       return {

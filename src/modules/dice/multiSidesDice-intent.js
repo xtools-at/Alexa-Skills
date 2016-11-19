@@ -2,23 +2,21 @@
 module.exports = app => {
 
   const msdUtterances = [
-    'wuerfel mit {num:Number} Wuerfeln mit {sides:Number} Seiten',
-    'wuerfel {num:Number} Wuerfel mit {sides:Number} Seiten',
-    'wuerfle mit {num:Number} Wuerfeln mit {sides:Number} Seiten',
-    'wuerfle {num:Number} Wuerfel mit {sides:Number} Seiten',
-    'rolle mit {num:Number} Wuerfeln mit {sides:Number} Seiten',
-    'rolle {num:Number} Wuerfel mit {sides:Number} Seiten',
-    'roll {num:Number} Wuerfel mit {sides:Number} Seiten',
-    'wirf mit {num:Number} Wuerfeln mit {sides:Number} Seiten',
-    'wirf {num:Number} Wuerfel mit {sides:Number} Seiten',
-    '{num:Number} Wuerfel mit {sides:Number} Seiten'
+    '{num:Number} dice with {sides:Number} sides',
+    '{num:Number} die with {sides:Number} sides',
+    'roll {num:Number} dice with {sides:Number} sides',
+    'roll {num:Number} die with {sides:Number} sides',
+    'throw {num:Number} dice with {sides:Number} sides',
+    'throw {num:Number} die with {sides:Number} sides',
+    'play {num:Number} dice with {sides:Number} sides',
+    'play {num:Number} die with {sides:Number} sides'
   ];
 
   app.intent('MultiSideDiceIntent', msdUtterances, (slots) => {
 
     if (!slots.num || !slots.sides) {
       return {
-        text: 'Nochmals bitte',
+        text: 'I did not understand you, please repeat',
         end: false
       };
     } else {
@@ -35,7 +33,7 @@ module.exports = app => {
 
       // check for NaN
       if (diceValue !== diceValue) {
-        outputSpeech = `<speak>Da ist was schiefgelaufen</speak>`;
+        outputSpeech = `<speak>I did not understand you</speak>`;
       }
 
       return {

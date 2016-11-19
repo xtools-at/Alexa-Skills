@@ -5,7 +5,7 @@
  * Global app configuration and all intent registering belongs here
  */
 const alexia = require('alexia');
-const app = alexia.createApp('Wuerfel');
+const app = alexia.createApp('Dice');
 
 /**
  * Register callback to be executed once app is started without any intent.

@@ -13,7 +13,7 @@ const answer = {
 
     // check for NaN
     if (diceValue !== diceValue) {
-      outputSpeech = `<speak>Da ist was schiefgelaufen</speak>`;
+      outputSpeech = `<speak>Something went wrong</speak>`;
     }
 
     return {

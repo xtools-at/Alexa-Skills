@@ -2,13 +2,13 @@
 module.exports = app => {
 
   const sdUtterances = [
-    'wuerfel',
-    'wuerfle',
-    'wuerfeln',
     'roll',
-    'rolle',
-    'los',
-    'wirf'
+    'play',
+    'dice',
+    'die',
+    'throw',
+    'go',
+    'do it'
   ];
 
   app.intent('SingleDiceIntent', sdUtterances, () => {
