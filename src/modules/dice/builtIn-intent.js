@@ -1,3 +1,4 @@
+'use strict';
 module.exports = app => {
 
   // handle mandatory built-in Intents

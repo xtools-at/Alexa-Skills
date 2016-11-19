@@ -1,3 +1,4 @@
+'use strict';
 const answer = {
   'create': function (dices, sides) {
     if (!sides || typeof sides === 'undefined') {
