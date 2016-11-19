@@ -25,9 +25,14 @@
     "world"
   ],
   "dependencies": {
+<<<<<<< HEAD
     "alexia": "^2.0.0",
     "hapi": "^15.2.0",
     "moment": "^2.16.0"
+=======
+    "alexia": "^2.0.1",
+    "hapi": "^15.2.0"
+>>>>>>> master
   },
   "devDependencies": {
     "chai": "^3.5.0",
