@@ -47,7 +47,7 @@ module.exports = app => {
   app.intent('ExchangeRateIntent', exUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyInput || !slots.currencyTarget) {
       return {
-        text: 'Eine der Waehrungen kenne ich nicht',
+        text: 'I did not recognize one of the currencies',
         end: false
       };
     } else {
@@ -66,7 +66,7 @@ module.exports = app => {
           // error handling
           if (rate !== rate || !currencyIn || typeof currencyIn === 'undefined' || !currencyTarget || typeof currencyTarget === 'undefined') {
             done({
-              text: 'Ich habe dich nicht richtig verstanden',
+              text: 'I did not understand you correctly',
               end: false
             });
           }
@@ -74,10 +74,10 @@ module.exports = app => {
           // replace dots with commas
           rate = '' + rate.replace('.', ',');
 
-          done(`Ein ${currencyIn} sind ${rate} ${currencyTarget}`);
+          done(`One ${currencyIn} is ${rate} ${currencyTarget}`);
         } else {
           done({
-            text: 'Entschuldige, da hat was nicht geklappt',
+            text: 'Something went wrong, please try again',
             end: false
           });
         }

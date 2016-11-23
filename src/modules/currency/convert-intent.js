@@ -18,7 +18,7 @@ module.exports = app => {
   app.intent('ConvertIntent', convUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyInput || !slots.currencyTarget) {
       return {
-        text: 'Eine der Waehrungen kenne ich nicht',
+        text: 'I did not recognize one of the currencies',
         end: false
       };
     } else {
@@ -40,7 +40,9 @@ module.exports = app => {
 
           var currencyIn = dictionary.currencyNamesPlural[inputC];
           var currencyTarget = dictionary.currencyNamesPlural[targetC];
-          var connection = 'sind';
+          var connection = 'is';
+          
+          /*
           if (num === 1) {
             // inputCurrency Singular
             currencyIn = dictionary.currencyNamesSingular[inputC];
@@ -48,25 +50,28 @@ module.exports = app => {
           if (convertedNumber === 1 || (Math.round(convertedNumber * 100) / 100) === 1) {
             // targetCurrency Singular
             currencyTarget = dictionary.currencyNamesSingular[targetC];
-            connection = 'ist';
+            //connection = 'ist';
           }
+          */
 
           // error handling
           if (num !== num || convertedNumber !== convertedNumber || !currencyIn || typeof currencyIn === 'undefined' || !currencyTarget || typeof currencyTarget === 'undefined') {
             done({
-              text: 'Ich habe dich nicht richtig verstanden',
+              text: 'I did not understand you correctly',
               end: false
             });
           }
 
-          // replace dots with commas
+          /*
+          // replace dots with commas -> German only
           num = '' + num.replace('.', ',');
           convertedNumber = '' + convertedNumber.replace('.', ',');
+          */
 
           done(`${num} ${currencyIn} ${connection} ${convertedNumber} ${currencyTarget}`);
         } else {
           done({
-            text: 'Entschuldige, da hat was nicht geklappt',
+            text: 'Something went wrong, please try again',
             end: false
           });
         }

@@ -6,7 +6,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('Wechselstube');
+const app = alexia.createApp('CurrencyConverter');
 
 /**
  * Register callback to be executed once app is started without any intent.
@@ -14,7 +14,7 @@ const app = alexia.createApp('Wechselstube');
  */
 app.onStart(() => {
   return {
-    text: 'Frage mich nach Wechselkursen oder wieviel einer Waehrung in einer anderen ausmacht',
+    text: 'Ask me about exchange rates or convert a currency into another',
     end: false
   };
 });

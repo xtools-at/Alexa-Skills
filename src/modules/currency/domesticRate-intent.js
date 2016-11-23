@@ -32,10 +32,10 @@ module.exports = app => {
     'nach dem Wechselkurs auf {currencyTarget:Currency}'
   ];
 
-  app.intent('EuroRateIntent', eurUtterances, (slots, attrs, data, done) => {
+  app.intent('DomesticRateIntent', eurUtterances, (slots, attrs, data, done) => {
     if (!slots.currencyTarget) {
       return {
-        text: 'Diese Waehrung kenne ich nicht',
+        text: 'I did not recognize this currency',
         end: false
       };
     } else {
@@ -51,7 +51,7 @@ module.exports = app => {
           // error handling
           if (rate !== rate || !currencyTarget || typeof currencyTarget === 'undefined') {
             done({
-              text: 'Ich habe dich nicht richtig verstanden',
+              text: 'I did not understand you correctly',
               end: false
             });
           }
@@ -59,10 +59,10 @@ module.exports = app => {
           // replace dots with commas
           rate = '' + rate.replace('.', ',');
 
-          done(`Ein Euro sind ${rate} ${currencyTarget}`);
+          done(`One Pound Strling is ${rate} ${currencyTarget}`);
         } else {
           done({
-            text: 'Entschuldige, da hat was nicht geklappt',
+            text: 'Something went wrong, please try again',
             end: false
           });
         }
