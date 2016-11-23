@@ -27,7 +27,7 @@ module.exports = app => {
 
   app.builtInIntent('help', helpUtterances, () => {
     var speech = '<speak>';
-    speech += 'To retrieve exchange rates for the Pound, ask me for example <s>Whats the exchange rate for the Swiss Franc</s>';
+    speech += 'To retrieve exchange rates for U.S. Dollar, ask me for example <s>Whats the exchange rate for the Swiss Franc</s>';
     speech += 'To convert currencies, ask me <s>How much is 100 Dollar in Euro</s>';
     sppech += 'To retrieve specific exchange rates, ask me <s>Whats the exchange rate between Swiss Franc and Euro</s>';
     speech += '<s>How can I help you</s>';
