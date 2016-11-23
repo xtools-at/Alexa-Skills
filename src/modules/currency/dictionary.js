@@ -78,6 +78,7 @@ const currencies = {
   'lira': 'TRY',
   'zypern lira': 'TRY',
   'zypriotische lira': 'TRY',
+  'tuerkische lira': 'TRY',
   'rand': 'ZAR',
   'suedafrikanische rand': 'ZAR',
   'suedafrikanischer rand': 'ZAR'
@@ -114,7 +115,7 @@ const currencyNamesPlural = {
   'SEK': 'Schwedische Kronen',
   'SGD': 'Singapur Dollar',
   'THB': 'Thailaendische Baht',
-  'TRY': 'Zypriotische Lira',
+  'TRY': 'Tuerkische Lira',
   'ZAR': 'Suedafrikanische Rand'
 };
 
@@ -149,7 +150,7 @@ const currencyNamesSingular = {
   'SEK': 'Schwedische Kronen',
   'SGD': 'Singapur Dollar',
   'THB': 'Thailaendischer Baht',
-  'TRY': 'Zypriotische Lira',
+  'TRY': 'Tuerkische Lira',
   'ZAR': 'Suedafrikanischer Rand'
 };
 
