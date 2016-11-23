@@ -7,12 +7,14 @@ module.exports = app => {
   app.customSlot('Currency', Object.keys(dictionary.currencies));
 
   const convUtterances = [
-    'Wieviel sind {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
-    'Wieviel ist {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
-    'Wieviel {currencyTarget:Currency} sind {num:Number} {currencyInput:Currency}',
-    'Wieviel {currencyTarget:Currency} ist {num:Number} {currencyInput:Currency}',
-    'Was sind {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
-    'Was ist {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}'
+    'How much is {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
+    'How much are {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
+    'convert {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
+    'convert {num:Number} {currencyInput:Currency} to {currencyTarget:Currency}',
+    'to convert {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
+    'to convert {num:Number} {currencyInput:Currency} to {currencyTarget:Currency}',
+    'What is {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}',
+    'Whats {num:Number} {currencyInput:Currency} in {currencyTarget:Currency}'
   ];
 
   app.intent('ConvertIntent', convUtterances, (slots, attrs, data, done) => {

@@ -6,30 +6,22 @@ const axios = require('axios');
 module.exports = app => {
 
   const eurUtterances = [
-    'Was ist der Kurs von {currencyTarget:Currency}',
-    'Was ist der Kurs fuer {currencyTarget:Currency}',
-    'Was ist der Kurs auf {currencyTarget:Currency}',
-    'Was ist der Wechselkurs von {currencyTarget:Currency}',
-    'Was ist der Wechselkurs fuer {currencyTarget:Currency}',
-    'Was ist der Wechselkurs auf {currencyTarget:Currency}',
-    'Wieviel ist der Kurs von {currencyTarget:Currency}',
-    'Wieviel ist der Kurs fuer {currencyTarget:Currency}',
-    'Wieviel ist der Kurs auf {currencyTarget:Currency}',
-    'Wieviel ist der Wechselkurs von {currencyTarget:Currency}',
-    'Wieviel ist der Wechselkurs fuer {currencyTarget:Currency}',
-    'Wieviel ist der Wechselkurs auf {currencyTarget:Currency}',
-    'Wie ist der Kurs von {currencyTarget:Currency}',
-    'Wie ist der Kurs fuer {currencyTarget:Currency}',
-    'Wie ist der Kurs auf {currencyTarget:Currency}',
-    'Wie ist der Wechselkurs von {currencyTarget:Currency}',
-    'Wie ist der Wechselkurs fuer {currencyTarget:Currency}',
-    'Wie ist der Wechselkurs auf {currencyTarget:Currency}',
-    'nach dem Kurs von {currencyTarget:Currency}',
-    'nach dem Kurs fuer {currencyTarget:Currency}',
-    'nach dem Kurs auf {currencyTarget:Currency}',
-    'nach dem Wechselkurs von {currencyTarget:Currency}',
-    'nach dem Wechselkurs fuer {currencyTarget:Currency}',
-    'nach dem Wechselkurs auf {currencyTarget:Currency}'
+    'What is the exchange rate for {currencyTarget:Currency}',
+    'Whats the exchange rate for {currencyTarget:Currency}',
+    'for the exchange rate for {currencyTarget:Currency}',
+    'What is the rate for {currencyTarget:Currency}',
+    'Whats the rate for {currencyTarget:Currency}',
+    'for the rate for {currencyTarget:Currency}',
+    'What is the exchange rate of {currencyTarget:Currency}',
+    'Whats the exchange rate of {currencyTarget:Currency}',
+    'for the exchange rate of {currencyTarget:Currency}',
+    'What is the rate of {currencyTarget:Currency}',
+    'Whats the rate of {currencyTarget:Currency}',
+    'for the rate of {currencyTarget:Currency}',
+    'How much is the exchange rate for {currencyTarget:Currency}',
+    'How much is the exchange rate of {currencyTarget:Currency}',
+    'How much is the rate for {currencyTarget:Currency}',
+    'How much is the rate of {currencyTarget:Currency}'
   ];
 
   app.intent('DomesticRateIntent', eurUtterances, (slots, attrs, data, done) => {
