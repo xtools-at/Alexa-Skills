@@ -42,7 +42,6 @@ module.exports = app => {
           var currencyTarget = dictionary.currencyNamesPlural[targetC];
           var connection = 'is';
           
-          /*
           if (num === 1) {
             // inputCurrency Singular
             currencyIn = dictionary.currencyNamesSingular[inputC];
@@ -50,9 +49,7 @@ module.exports = app => {
           if (convertedNumber === 1 || (Math.round(convertedNumber * 100) / 100) === 1) {
             // targetCurrency Singular
             currencyTarget = dictionary.currencyNamesSingular[targetC];
-            //connection = 'ist';
           }
-          */
 
           // error handling
           if (num !== num || convertedNumber !== convertedNumber || !currencyIn || typeof currencyIn === 'undefined' || !currencyTarget || typeof currencyTarget === 'undefined') {
@@ -61,12 +58,6 @@ module.exports = app => {
               end: false
             });
           }
-
-          /*
-          // replace dots with commas -> German only
-          num = '' + num.replace('.', ',');
-          convertedNumber = '' + convertedNumber.replace('.', ',');
-          */
 
           done(`${num} ${currencyIn} ${connection} ${convertedNumber} ${currencyTarget}`);
         } else {

@@ -5,19 +5,20 @@ module.exports = app => {
   // handle mandatory built-in Intents
   const stopUtterances = [
     'stop',
+    'stop now',
+    'please stop',
     'halt',
-    'ausschalten'
+    'turn off'
   ];
   const cancelUtterances = [
-    'abbrechen',
+    'abort',
     'cancel',
-    'aufhoeren'
+    'dont'
   ];
   const helpUtterances = [
-    'hilfe',
-    'starte hilfe',
-    'hilf mir',
-    'was kann ich sagen'
+    'help',
+    'help me',
+    'start help'
   ];
 
   app.builtInIntent('stop', stopUtterances, () => '');

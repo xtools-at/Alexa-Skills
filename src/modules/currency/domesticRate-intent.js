@@ -41,7 +41,7 @@ module.exports = app => {
     } else {
       var targetC = dictionary.currencies[slots.currencyTarget];
 
-      axios.get(`https://api.fixer.io/latest?base=EUR&symbols=${targetC}`).then(result => {
+      axios.get(`https://api.fixer.io/latest?base=GBP&symbols=${targetC}`).then(result => {
         if (result.data) {
           var rate = result.data.rates[targetC];
           rate = rate.toFixed(3);
@@ -56,10 +56,7 @@ module.exports = app => {
             });
           }
 
-          // replace dots with commas
-          rate = '' + rate.replace('.', ',');
-
-          done(`One Pound Strling is ${rate} ${currencyTarget}`);
+          done(`One Pound Sterling is ${rate} ${currencyTarget}`);
         } else {
           done({
             text: 'Something went wrong, please try again',

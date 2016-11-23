@@ -71,9 +71,6 @@ module.exports = app => {
             });
           }
 
-          // replace dots with commas
-          rate = '' + rate.replace('.', ',');
-
           done(`One ${currencyIn} is ${rate} ${currencyTarget}`);
         } else {
           done({

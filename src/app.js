@@ -14,7 +14,7 @@ const app = alexia.createApp('CurrencyConverter');
  */
 app.onStart(() => {
   return {
-    text: 'Ask me about exchange rates or convert a currency into another',
+    text: 'Ask me about exchange rates or to convert a currency into another',
     end: false
   };
 });
