@@ -6,7 +6,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('Nachtlicht');
+const app = alexia.createApp('Nightlight');
 
 /**
  * Register callback to be executed once app is started without any intent.

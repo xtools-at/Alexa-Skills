@@ -3,19 +3,24 @@
 module.exports = app => {
 
   const secUtterances = [
-    'ein fuer {num:Number} Sekunden',
-    'an fuer {num:Number} Sekunden',
-    'einschalten fuer {num:Number} Sekunden',
-    'fuer {num:Number} Sekunden einschalten',
-    'fuer {num:Number} Sekunden ein',
-    'schalte fuer {num:Number} Sekunden ein',
-    'fuer {num:Number} Sekunden an',
-    '{num:Number} Sekunden einschalten',
-    '{num:Number} Sekunden ein',
-    'schalte {num:Number} Sekunden ein',
-    '{num:Number} Sekunden an',
-    '{num:Number} Sekunden',
-    'fuer {num:Number} Sekunden'
+    '{num:Number} seconds',
+    'for {num:Number} seconds',
+    'on for {num:Number} seconds',
+    'switch on lights for {num:Number} seconds',
+    'switch on the light for {num:Number} seconds',
+    'turn on lights for {num:Number} seconds',
+    'turn on the light for {num:Number} seconds',
+    'to switch on lights for {num:Number} seconds',
+    'to switch on the light for {num:Number} seconds',
+    'to turn on lights for {num:Number} seconds',
+    'to turn on the light for {num:Number} seconds',
+    'switch lights on for {num:Number} seconds',
+    'turn lights on for {num:Number} seconds',
+    'turn the light on for {num:Number} seconds',
+    'to switch lights on for {num:Number} seconds',
+    'to switch the light on for {num:Number} seconds',
+    'to turn lights on for {num:Number} seconds',
+    'to turn the light on for {num:Number} seconds'
   ];
 
   app.intent('SecondsIntent', secUtterances, (slots) => {
@@ -28,8 +33,6 @@ module.exports = app => {
       var baseUrl = 'https://s3.eu-central-1.amazonaws.com/assetsalexa/nachtlicht/';
       var num = slots.num;
       var audio = '';
-
-      // console.log('debug 1: ', num, num > 0);
 
       if (num > 0 && num <= 2) {
         audio = `<audio src="${baseUrl + 's0' + num + 's.mp3'}" />`;
@@ -68,9 +71,7 @@ module.exports = app => {
         audio += `<audio src="${baseUrl + 's08s.mp3'}" />`;
       }
 
-      // console.log('debug 3: ', audio);
       var ssml = `<speak>${audio}</speak>`;
-      // console.log('debug 4: ', ssml);
 
       return {
         ssml: true,
