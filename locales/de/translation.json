@@ -1,13 +1,45 @@
 {
   "LaunchRequest": {
-    "text": "Wilkommen bei Alexia Starter Kit"
+    "text": "Frage mich nach Wörtern oder Sätzen in einer Sprache"
   },
   "SessionEndedRequest": {
-    "text": "Auf Wiedersehen von Alexia Starter Kit"
+    "text": "Tschüss"
   },
   "DefaultActionFail": {
-    "text": "Ihr Anweisung ist ungültig"
+    "text": "Das war so nicht richtig"
   },
+
+  "HelpIntent": {
+    "utterances": [
+      "hilfe",
+      "hilfe bitte",
+      "bitte hilfe",
+      "starte hilfe",
+      "hilf mir",
+      "hilf mir bitte",
+      "was kann ich sagen",
+      "kannst du mir helfen",
+      "kannst du mir bitte helfen"
+    ],
+    "text": "<speak>Am besten sagst du zuerst die gewünschte Sprache und dann das Wort oder den Satz, den ich übersetzen soll. Zum Beispiel <s>Was ist auf Spanisch</s><s>Mein Name ist Alexa</s></speak>"
+  },
+  "CancelIntent": {
+    "utterances": [
+      "abbrechen",
+      "cancel",
+      "vergiss es"
+    ]
+  },
+  "StopIntent": {
+    "utterances": [
+      "stop",
+      "halt",
+      "ausschalten",
+      "hör endlich auf",
+      "aufhoeren" 
+    ]
+  },
+
   "HelloIntent": {
     "utterances": "hallo",
     "text": "Hallo"
@@ -21,11 +53,29 @@
     "text": "{{slots.item}} ist {{result}}",
     "text_error1": "Ich habe Ihre Suchbegriffe nicht verstanden",
     "text_error2": "Keine Übereinstimmung für {{item}} gefunden",
+    "dictionary": {}
+  },
+
+  "TranslateIntent": {
+    "utterances": [
+      "auf {language:Language} {phrase:Phrase}",
+      "in {language:Language} {phrase:Phrase}",
+      "was ist auf {language:Language} {phrase:Phrase}",
+      "was ist in {language:Language} {phrase:Phrase}",
+      "{phrase:Phrase} auf {language:Language}",
+      "{phrase:Phrase} in {language:Language}"
+    ],
+    "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt",
+    "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt",
+    "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt",
+    "cardTitle": "Universal Übersetzer",
+    "cardContent": "\"{{slots.phrase}}\" heißt auf {{slots.language}} \"{{translatedText}}\"",
     "dictionary": {
-      "Auto": "ein meist geschlossenes Fahrzeug, das gewöhnlich vier Räder hat, von einem Motor angetrieben wird und besonders zur Beförderung von Personen dient",
-      "Fahrrad": "ein Fahrzeug, das zwei Räder hat, auf dem man sitzt und mit den Beinen eine Art Zahnrad in Bewegung hält, das über eine Kette das Hinterrad antreibt",
-      "Haus": "ein Gebäude das in verschiedene Räume und Stockwerke aufgeteilt ist und das Menschen als Wohnung oder Arbeitsraum dient",
-      "Schwimmbad": "Gebäude oder Anlage im Freien mit Becken zum Baden und Schwimme"
+      "bulgarisch": "bg",
+      "bosnisch": "bs",
+      "englisch": "en",
+      "kroatisch": "ht",
+      "ungarisch": "hu"
     }
   }
 }
