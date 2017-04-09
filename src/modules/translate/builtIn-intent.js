@@ -12,12 +12,4 @@ module.exports = app => {
       end: false
     };
   });
-
-  app.builtInIntent('help', () => {
-    return {
-      ssml: true,
-      text: app.t('text'),
-      end: false
-    };
-  });
 };

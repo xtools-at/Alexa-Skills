@@ -1,27 +1,12 @@
 {
   "LaunchRequest": {
-    "text": "Frage mich nach Wörtern oder Sätzen in einer Sprache"
+    "text": "Frage mich nach Wörtern oder kurzen Sätzen in einer Sprache"
   },
   "SessionEndedRequest": {
     "text": "Tschüss"
   },
   "DefaultActionFail": {
     "text": "Das war so nicht richtig"
-  },
-
-  "HelpIntent": {
-    "utterances": [
-      "hilfe",
-      "hilfe bitte",
-      "bitte hilfe",
-      "starte hilfe",
-      "hilf mir",
-      "hilf mir bitte",
-      "was kann ich sagen",
-      "kannst du mir helfen",
-      "kannst du mir bitte helfen"
-    ],
-    "text": "<speak>Am besten sagst du zuerst die gewünschte Sprache und dann das Wort oder den Satz, den ich übersetzen soll. Zum Beispiel <s>Was ist auf Spanisch</s><s>Mein Name ist Alexa</s></speak>"
   },
   "CancelIntent": {
     "utterances": [
@@ -36,24 +21,72 @@
       "halt",
       "ausschalten",
       "hör endlich auf",
-      "aufhoeren" 
+      "aufhören" 
     ]
   },
-
   "NoIntent": {
     "utterances": [
       "nein",
       "nein danke"
     ]
   },
+  "HelpIntent": {
+    "utterances": [
+      "hilfe",
+      "hilfe bitte",
+      "bitte hilfe",
+      "starte hilfe",
+      "hilf mir",
+      "hilf mir bitte",
+      "was kann ich sagen",
+      "kannst du mir helfen",
+      "kannst du mir bitte helfen"
+    ],
+    "text": "<speak>Am besten sagst du zuerst die gewünschte Sprache und dann das Wort oder den Satz, den ich übersetzen soll. Zum Beispiel <s>Was ist auf Englisch</s><s>Mein Name ist Alexa</s>. Für weitere Optionen, sage <s>mehr Hilfe</s></speak>"
+  },
+  "MoreHelpIntent": {
+    "utterances": [
+      "mehr hilfe",
+      "mehr info",
+    ],
+    "text": "<speak>Um zu erfahren, welche Sprachen du verwenden kannst, sage <s>Verfügbare Sprachen</s>. Ich kann auch versuchen, die Übersetzung auszusprechen, mit lustigen Ergebnissen. Sage hierfür <s>sag es</s> nach einer Übersetzung.</speak>"
+  },
+  "AvailableLanguagesIntent": {
+    "utterances": [
+      "verfügbare sprachen",
+      "welche sprache",
+      "welche sprachen",
+      "welche sprachen kennst du",
+    ],
+    "text": "Ich spreche Englisch, Kroatisch und Ungarisch"
+  },
+  "SayItIntent": {
+    "utterances": [
+      "sag es",
+      "sag das",
+      "sprich es aus",
+      "sprich das aus"
+    ],
+    "text": "{{attrs.lastPhrase}}",
+    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
+  },
+  "SpellItIntent": {
+    "utterances": [
+      "buchstabiere das",
+      "buchstabiere es",
+      "buchstabieren"
+    ],
+    "text": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>",
+    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
+  },
   "YesIntent": {
     "utterances": [
       "ja",
-      "ja bitte"
+      "ja bitte",
+      "yes"
     ],
     "textSpellOut": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>"
   },
-
   "TranslateIntent": {
     "utterances": [
       "auf {language:Language} {phrase:Phrase}",
