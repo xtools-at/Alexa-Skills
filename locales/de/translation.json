@@ -40,20 +40,18 @@
     ]
   },
 
-  "HelloIntent": {
-    "utterances": "hallo",
-    "text": "Hallo"
-  },
-  "SearchIntent": {
+  "NoIntent": {
     "utterances": [
-      "Suche nach {item:Item}",
-      "Was ist {item:Item}",
-      "Beschreiben {item:Item}"
+      "nein",
+      "nein danke"
+    ]
+  },
+  "YesIntent": {
+    "utterances": [
+      "ja",
+      "ja bitte"
     ],
-    "text": "{{slots.item}} ist {{result}}",
-    "text_error1": "Ich habe Ihre Suchbegriffe nicht verstanden",
-    "text_error2": "Keine Übereinstimmung für {{item}} gefunden",
-    "dictionary": {}
+    "textSpellOut": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>"
   },
 
   "TranslateIntent": {
@@ -65,7 +63,7 @@
       "{phrase:Phrase} auf {language:Language}",
       "{phrase:Phrase} in {language:Language}"
     ],
-    "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt",
+    "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt. Soll ich sie für dich buchstabieren?",
     "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt",
     "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt",
     "cardTitle": "Universal Übersetzer",
