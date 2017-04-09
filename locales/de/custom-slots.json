@@ -1,16 +1,10 @@
 {
-  "ITEM": [
-    "Auto",
-    "Fahrrad",
-    "Haus",
-    "Schwimmbad"
-  ],
   "Language" : [
-  	"bulgarisch",
-    "bosnisch",
-    "englisch",
-    "kroatisch",
-    "ungarisch"
+  	"Bulgarisch",
+    "Bosnisch",
+    "Englisch",
+    "Kroatisch",
+    "Ungarisch"
   ],
   "Phrase" : [
   	"darstellen",

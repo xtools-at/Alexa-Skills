@@ -1,7 +1,8 @@
 'use strict';
 
 var request = require('request');
-var libxmljs = require('libxmljs');
+//var libxmljs = require('libxmljs');
+var et = require('elementtree');
 
 var getLanguageKey = (lang, dictionary) => {
   try {
@@ -53,10 +54,15 @@ var translate = (text, langTo, callback) => {
                           
                         // body looks like:
                         // <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello</string>
-                        //console.log(body);
+                        console.log(body);
 
-                        var xmlRes = libxmljs.parseXml(body);
-                        translation = xmlRes.root().text();
+                        //var xmlRes = libxmljs.parseXml(body);
+                        //translation = xmlRes.root().text();
+
+                        var xmlRes = et.parse(body);
+                        translation = xmlRes.findtext('./');
+                        console.log(translation);
+
                         return callback(translation);
 
                       } else {

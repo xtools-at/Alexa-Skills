@@ -4,10 +4,10 @@ module.exports = app => {
 
   app.builtInIntent('yes', (slots, attrs, data) => {
     console.log(attrs.previousIntent);
-    if (attrs.previousIntent == 'TranslateIntent' && typeof attrs.lastPhrase !== undefined && attrs.lastPhrase !== '') {
+    if (attrs.previousIntent == 'TranslateIntent' && attrs.lastPhrase && attrs.lastPhrase !== '') {
       return {
         ssml: true,
-        text: app.t('textSpellOut', attrs),
+        text: app.t('textSpellOut', {attrs}),
         end: false
       };
     } else {
@@ -16,12 +16,5 @@ module.exports = app => {
         end: false
       };
     }
-  });
-
-  app.builtInIntent('no', () => {
-    return {
-      text: '',
-      end: false
-    };
   });
 };

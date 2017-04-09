@@ -27,6 +27,8 @@ module.exports = app => {
       defaultValue: {}
     });
 
+    console.log(dictionary);
+
     var languageKey = translator.getLanguageKey(slots.language, dictionary);
 
     if (typeof languageKey !== 'undefined') {

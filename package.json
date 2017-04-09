@@ -26,10 +26,10 @@
   ],
   "dependencies": {
     "alexia": "^2.4.0",
+    "elementtree": "^0.1.7",
     "hapi": "^15.2.0",
     "i18next": "^4.1.0",
     "i18next-node-fs-backend": "^0.1.3",
-    "libxmljs": "^0.18.4",
     "request": "^2.69.0"
   },
   "devDependencies": {

@@ -6,7 +6,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp();
+const app = alexia.createApp('Universal Translator');
 const i18next = require('i18next');
 const FilesystemBackend = require('i18next-node-fs-backend');
 
@@ -31,7 +31,10 @@ app.setI18next(i18next);
  * Example invocation: 'Alexa, start <my-app-name>'
  */
 app.onStart(() => {
-  return app.t('text');
+  return {
+    text: app.t('text'),
+    end: false
+  }
 });
 
 /**
