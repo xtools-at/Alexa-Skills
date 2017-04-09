@@ -30,7 +30,7 @@ module.exports = app => {
     var languageKey = translator.getLanguageKey(slots.language, dictionary);
 
     if (typeof languageKey !== 'undefined') {
-      translator.translate(slots.phrase, languageKey, function (translatedText) {
+      translator.translate(slots.phrase, languageKey, app.t('langFrom'), function (translatedText) {
         // console.log(translatedText);
         if (translatedText !== '') {
           done({

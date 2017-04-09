@@ -1,12 +1,12 @@
 {
   "LaunchRequest": {
-    "text": "Frage mich nach Wörtern oder kurzen Sätzen in einer Sprache"
+    "text": "Frage mich nach Wörtern oder kurzen Sätzen in einer Fremdsprache"
   },
   "SessionEndedRequest": {
     "text": "Tschüss"
   },
   "DefaultActionFail": {
-    "text": "Das war so nicht richtig"
+    "text": "Das ist was falsch gelaufen"
   },
   "CancelIntent": {
     "utterances": [
@@ -27,7 +27,9 @@
   "NoIntent": {
     "utterances": [
       "nein",
-      "nein danke"
+      "nein danke",
+      "no",
+      "nope"
     ]
   },
   "HelpIntent": {
@@ -47,18 +49,20 @@
   "MoreHelpIntent": {
     "utterances": [
       "mehr hilfe",
-      "mehr info",
+      "mehr info"
     ],
-    "text": "<speak>Um zu erfahren, welche Sprachen du verwenden kannst, sage <s>Verfügbare Sprachen</s>. Ich kann auch versuchen, die Übersetzung auszusprechen, mit lustigen Ergebnissen. Sage hierfür <s>sag es</s> nach einer Übersetzung.</speak>"
+    "text": "<speak>Um zu erfahren, welche Sprachen du verwenden kannst, sage <s>Verfügbare Sprachen</s>. Ich kann auch versuchen, die Übersetzung auszusprechen, mit lustigen Ergebnissen. Sage hierfür <s>sag es</s> nach einer Übersetzung. Ich buchstabiere es dir auch gerne, wenn du <s>buchstabiere das</s> sagst</speak>"
   },
   "AvailableLanguagesIntent": {
     "utterances": [
+      "sprache",
+      "sprachen",
       "verfügbare sprachen",
       "welche sprache",
       "welche sprachen",
-      "welche sprachen kennst du",
+      "welche sprachen kennst du"
     ],
-    "text": "Ich spreche Englisch, Kroatisch und Ungarisch"
+    "text": "Ich kenne über 30 Sprachen. Bosnisch, Bulgarisch, Dänisch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Italienisch, Katalanisch, Klingonisch, Kroatisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Slowakisch, Slowenisch, Spanisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Walisisch. Puh."
   },
   "SayItIntent": {
     "utterances": [
@@ -91,8 +95,22 @@
     "utterances": [
       "auf {language:Language} {phrase:Phrase}",
       "in {language:Language} {phrase:Phrase}",
+      "übersetze auf {language:Language} {phrase:Phrase}",
+      "übersetze in {language:Language} {phrase:Phrase}",
+      "übersetze {phrase:Phrase} auf {language:Language}",
+      "übersetze {phrase:Phrase} in {language:Language}",
       "was ist auf {language:Language} {phrase:Phrase}",
       "was ist in {language:Language} {phrase:Phrase}",
+      "was ist {phrase:Phrase} auf {language:Language}",
+      "was ist {phrase:Phrase} in {language:Language}",
+      "wie heißt auf {language:Language} {phrase:Phrase}",
+      "wie heißt in {language:Language} {phrase:Phrase}",
+      "wie heißt {phrase:Phrase} auf {language:Language}",
+      "wie heißt {phrase:Phrase} in {language:Language}",
+      "wie geht auf {language:Language} {phrase:Phrase}",
+      "wie geht in {language:Language} {phrase:Phrase}",
+      "wie geht {phrase:Phrase} auf {language:Language}",
+      "wie geht {phrase:Phrase} in {language:Language}",
       "{phrase:Phrase} auf {language:Language}",
       "{phrase:Phrase} in {language:Language}"
     ],
@@ -104,9 +122,36 @@
     "dictionary": {
       "bulgarisch": "bg",
       "bosnisch": "bs",
+      "katalanisch": "ca",
+      "tschechisch": "cs",
+      "walisisch": "cy",
+      "dänisch": "da",
+      "deutsch": "de",
+      "griechisch": "el",
       "englisch": "en",
-      "kroatisch": "ht",
-      "ungarisch": "hu"
-    }
+      "spanisch": "es",
+      "estnisch": "et",
+      "finnisch": "fi",
+      "französisch": "fr",
+      "kroatisch": "hr",
+      "ungarisch": "hu",
+      "italienisch": "it",
+      "litauisch": "lt",
+      "lettisch": "lv",
+      "norwegisch": "nb",
+      "niederländisch": "nl",
+      "polnisch": "pl",
+      "portugiesisch": "pt",
+      "rumänisch": "ro",
+      "russisch": "ru",
+      "slowakisch": "sk",
+      "slowenisch": "sl",
+      "serbisch": "sr-Latn",
+      "schwedisch": "sv",
+      "klingonisch": "tlh",
+      "türkisch": "tr",
+      "ukrainisch": "uk"
+    },
+    "langFrom" : "de"
   }
 }

@@ -1,31 +1,157 @@
 {
   "LaunchRequest": {
-    "text": "Welcome to Alexia Starter Kit"
+    "text": "Frage mich nach Wörtern oder kurzen Sätzen in einer Fremdsprache"
   },
   "SessionEndedRequest": {
-    "text": "Goodbye from Alexia Starter Kit"
+    "text": "Tschüss"
   },
   "DefaultActionFail": {
-    "text": "Sorry, your command is invalid"
+    "text": "Das ist was falsch gelaufen"
   },
-  "HelloIntent": {
-    "utterances": "hello",
-    "text": "Hello"
-  },
-  "SearchIntent": {
+  "CancelIntent": {
     "utterances": [
-      "Search for {item:Item}",
-      "What is {item:Item}",
-      "Describe me {item:Item}"
+      "abbrechen",
+      "cancel",
+      "vergiss es"
+    ]
+  },
+  "StopIntent": {
+    "utterances": [
+      "stop",
+      "halt",
+      "ausschalten",
+      "hör endlich auf",
+      "aufhören" 
+    ]
+  },
+  "NoIntent": {
+    "utterances": [
+      "nein",
+      "nein danke",
+      "no",
+      "nope"
+    ]
+  },
+  "HelpIntent": {
+    "utterances": [
+      "hilfe",
+      "hilfe bitte",
+      "bitte hilfe",
+      "starte hilfe",
+      "hilf mir",
+      "hilf mir bitte",
+      "was kann ich sagen",
+      "kannst du mir helfen",
+      "kannst du mir bitte helfen"
     ],
-    "text": "{{slots.item}} is {{result}}",
-    "text_error1": "I did not understand your search item",
-    "text_error2": "No match found for {{item}}",
+    "text": "<speak>Am besten sagst du zuerst die gewünschte Sprache und dann das Wort oder den Satz, den ich übersetzen soll. Zum Beispiel <s>Was ist auf Englisch</s><s>Mein Name ist Alexa</s>. Für weitere Optionen, sage <s>mehr Hilfe</s></speak>"
+  },
+  "MoreHelpIntent": {
+    "utterances": [
+      "mehr hilfe",
+      "mehr info"
+    ],
+    "text": "<speak>Um zu erfahren, welche Sprachen du verwenden kannst, sage <s>Verfügbare Sprachen</s>. Ich kann auch versuchen, die Übersetzung auszusprechen, mit lustigen Ergebnissen. Sage hierfür <s>sag es</s> nach einer Übersetzung. Ich buchstabiere es dir auch gerne, wenn du <s>buchstabiere das</s> sagst</speak>"
+  },
+  "AvailableLanguagesIntent": {
+    "utterances": [
+      "sprache",
+      "sprachen",
+      "verfügbare sprachen",
+      "welche sprache",
+      "welche sprachen",
+      "welche sprachen kennst du"
+    ],
+    "text": "Ich kenne über 30 Sprachen. Bosnisch, Bulgarisch, Dänisch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Italienisch, Katalanisch, Klingonisch, Kroatisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Slowakisch, Slowenisch, Spanisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Walisisch. Puh."
+  },
+  "SayItIntent": {
+    "utterances": [
+      "sag es",
+      "sag das",
+      "sprich es aus",
+      "sprich das aus"
+    ],
+    "text": "{{attrs.lastPhrase}}",
+    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
+  },
+  "SpellItIntent": {
+    "utterances": [
+      "buchstabiere das",
+      "buchstabiere es",
+      "buchstabieren"
+    ],
+    "text": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>",
+    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
+  },
+  "YesIntent": {
+    "utterances": [
+      "ja",
+      "ja bitte",
+      "yes"
+    ],
+    "textSpellOut": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>"
+  },
+  "TranslateIntent": {
+    "utterances": [
+      "auf {language:Language} {phrase:Phrase}",
+      "in {language:Language} {phrase:Phrase}",
+      "übersetze auf {language:Language} {phrase:Phrase}",
+      "übersetze in {language:Language} {phrase:Phrase}",
+      "übersetze {phrase:Phrase} auf {language:Language}",
+      "übersetze {phrase:Phrase} in {language:Language}",
+      "was ist auf {language:Language} {phrase:Phrase}",
+      "was ist in {language:Language} {phrase:Phrase}",
+      "was ist {phrase:Phrase} auf {language:Language}",
+      "was ist {phrase:Phrase} in {language:Language}",
+      "wie heißt auf {language:Language} {phrase:Phrase}",
+      "wie heißt in {language:Language} {phrase:Phrase}",
+      "wie heißt {phrase:Phrase} auf {language:Language}",
+      "wie heißt {phrase:Phrase} in {language:Language}",
+      "wie geht auf {language:Language} {phrase:Phrase}",
+      "wie geht in {language:Language} {phrase:Phrase}",
+      "wie geht {phrase:Phrase} auf {language:Language}",
+      "wie geht {phrase:Phrase} in {language:Language}",
+      "{phrase:Phrase} auf {language:Language}",
+      "{phrase:Phrase} in {language:Language}"
+    ],
+    "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt. Soll ich sie für dich buchstabieren?",
+    "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt",
+    "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt",
+    "cardTitle": "Universal Übersetzer",
+    "cardContent": "\"{{slots.phrase}}\" heißt auf {{slots.language}} \"{{translatedText}}\"",
     "dictionary": {
-      "car": "a road vehicle, typically with four wheels",
-      "bike": "a bicycle or motorcycle",
-      "house": "a building for human habitation",
-      "pool": "a small area of still water, typically one formed naturally"
-    }
+      "bulgarisch": "bg",
+      "bosnisch": "bs",
+      "katalanisch": "ca",
+      "tschechisch": "cs",
+      "walisisch": "cy",
+      "dänisch": "da",
+      "deutsch": "de",
+      "griechisch": "el",
+      "englisch": "en",
+      "spanisch": "es",
+      "estnisch": "et",
+      "finnisch": "fi",
+      "französisch": "fr",
+      "kroatisch": "hr",
+      "ungarisch": "hu",
+      "italienisch": "it",
+      "litauisch": "lt",
+      "lettisch": "lv",
+      "norwegisch": "nb",
+      "niederländisch": "nl",
+      "polnisch": "pl",
+      "portugiesisch": "pt",
+      "rumänisch": "ro",
+      "russisch": "ru",
+      "slowakisch": "sk",
+      "slowenisch": "sl",
+      "serbisch": "sr-Latn",
+      "schwedisch": "sv",
+      "klingonisch": "tlh",
+      "türkisch": "tr",
+      "ukrainisch": "uk"
+    },
+    "langFrom" : "de"
   }
 }

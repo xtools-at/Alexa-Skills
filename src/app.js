@@ -34,7 +34,7 @@ app.onStart(() => {
   return {
     text: app.t('text'),
     end: false
-  }
+  };
 });
 
 /**
