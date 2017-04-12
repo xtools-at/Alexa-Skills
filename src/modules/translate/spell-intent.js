@@ -21,7 +21,7 @@ module.exports = app => {
   app.intent('SayItIntent', (slots, attrs, data) => {
     if (attrs.lastPhrase && attrs.lastPhrase !== '') {
       return {
-        ssml: true,
+        ssml: false,
         text: app.t('text', {attrs}),
         end: false
       };

@@ -20,7 +20,7 @@ module.exports = app => {
 
   app.intent('AvailableLanguagesIntent', () => {
     return {
-      ssml: true,
+      ssml: false,
       text: app.t('text'),
       end: false
     };
