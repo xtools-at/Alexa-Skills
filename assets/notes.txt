@@ -1,0 +1,61 @@
+http://www.wienerlinien.at/ogd_routing/XML_DM_REQUEST?sessionID=0&locationServerActive=1&type_dm=stop&limit=5&name_dm=60201858
+<itdRequest sessionID="VOR-OGDR011279220276">
+
+
+
+
+
+
+http://www.wienerlinien.at/ogd_routing/XML_DM_REQUEST?sessionID=VOR-OGDR011279220276&requestID=1&dmLineSelectionAll=1
+<itdRequest>
+	<itdDepartureMonitorRequest>
+		<itdDepartureList>
+				<itdDeparture stopID="60201858" x="1831391" y="5849211" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="1" platform="1-U1" platformName="1" countdown="1">
+					<itdDateTime>
+						<itdDate day="7" month="4" year="2017" weekday="6"/>
+						!!<itdTime hour="16" minute="43" ap=""/>
+					</itdDateTime>
+					!!<itdServingLine key="2237" code="1" number="U1" symbol="U1" direction="Wien Leopoldau" realtime="0" motType="2">
+						<itdNoTrain name="U-Bahn"/>
+						<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="H"/>
+					</itdServingLine>
+				</itdDeparture>
+				
+				
+				
+{
+	lines: [
+		{
+			name: 'U1',
+			direction: [
+				{
+					name: 'Leopoldau',
+					departures: ['12:30','12:33','12:36']
+				}
+			],
+			
+		}
+	]
+
+}
+
+
+{
+	'U1': {
+		name: 'U1',
+		direction: [
+			{
+				name: 'Leopoldau',
+				departures: ['12:30','12:33','12:36']
+			}
+		],
+	},
+	'U2': ...
+}
+
+
+{
+	'Leopoldau': {
+		direction: 
+	}
+}

@@ -6,7 +6,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp('Universal Translator');
+const app = alexia.createApp('UBahn Wien');
 const i18next = require('i18next');
 const FilesystemBackend = require('i18next-node-fs-backend');
 
@@ -15,8 +15,8 @@ i18next
   .use(FilesystemBackend)
   .init({
     // debug: true,
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'de',
+    fallbackLng: 'de',
     backend: {
       loadPath: 'locales/{{lng}}/{{ns}}.json' // Path is relative to your current working directory - change it accordingly
     },

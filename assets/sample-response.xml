@@ -1,0 +1,107 @@
+<itdRequest xsi:noNamespaceSchemaLocation="http://ogd.vor.at/ogd/schema/9_16/itd.xsd" language="de" sessionID="VOR-OGDR011279220276" client="Firefox" serverID="VOR-OGDR01" clientIP="192.168.75.9" version="9.16.34.8" virtDir="ogd_routing" now="2017-04-07T16:52:47" nowWD="6" lengthUnit="METER">
+	<itdDepartureMonitorRequest requestID="1">
+		<itdOdv type="stop" usage="dm" anyObjFilter="0">
+			<itdOdvPlace state="identified" method="itp">
+				<odvPlaceElem omc="49000001" value="49000001:50" placeID="50" mainPlace="1" span="0" type="remote" x="1822610" y="5858270" mapName="MRCV">Wien</odvPlaceElem>
+				<odvPlaceInput/>
+			</itdOdvPlace>
+			<itdOdvName state="identified" method="auto">
+				<odvNameElem value="60201858:1" stopID="60201858" x="1831381" y="5849319" mapName="MRCV" isTransferStop="0" matchQuality="100000">Aderklaaer Straße</odvNameElem>
+				<odvNameInput>60201858</odvNameInput>
+			</itdOdvName>
+		</itdOdv>
+		<itdDateTime ttpFrom="20161101" ttpTo="20171209">
+			<itdDate day="7" month="4" year="2017" weekday="6"/>
+			<itdTime hour="16" minute="43"/>
+		</itdDateTime>
+		<itdDateRange>
+			<itdDate day="07" month="04" year="2017" weekday="6"/>
+			<itdDate day="08" month="04" year="2017" weekday="7"/>
+			<itdDate day="09" month="04" year="2017" weekday="1"/>
+			<itdDate day="10" month="04" year="2017" weekday="2"/>
+			<itdDate day="11" month="04" year="2017" weekday="3"/>
+			<itdDate day="12" month="04" year="2017" weekday="4"/>
+			<itdDate day="13" month="04" year="2017" weekday="5"/>
+			<itdDate day="14" month="04" year="2017" weekday="6"/>
+			<itdDate day="15" month="04" year="2017" weekday="7"/>
+			<itdDate day="16" month="04" year="2017" weekday="1"/>
+			<itdDate day="17" month="04" year="2017" weekday="2"/>
+			<itdDate day="18" month="04" year="2017" weekday="3"/>
+			<itdDate day="19" month="04" year="2017" weekday="4"/>
+			<itdDate day="20" month="04" year="2017" weekday="5"/>
+			<itdDate day="21" month="04" year="2017" weekday="6"/>
+		</itdDateRange>
+		<itdServingLines>
+			<itdServingLine index="2:0" valid="Jahresfahrplan 2017" code="1" number="U1" symbol="U1" direction="Wien Leopoldau" realtime="0" compound="0" selected="1" motType="2" TTB="1" STT="0" ROP="0" type="unknown" spTr="">
+				<itdNoTrain name="U-Bahn"/>
+				<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="H"/>
+				<itdRouteDescText>Reumannplatz - Leopoldau</itdRouteDescText>
+			</itdServingLine>
+			<itdServingLine index="2:1" valid="Jahresfahrplan 2017" code="1" number="U1" symbol="U1" direction="Wien Reumannplatz" realtime="0" compound="0" selected="1" motType="2" TTB="1" STT="0" ROP="0" type="unknown" spTr="">
+				<itdNoTrain name="U-Bahn"/>
+				<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="R"/>
+				<itdRouteDescText>Leopldau - Reumannplatz</itdRouteDescText>
+			</itdServingLine>
+			<itdServingLine index="5:0" valid="Jahresfahrplan 2017" code="3" number="28A" symbol="28A" direction="Wien Floridsdorf S+U" realtime="0" compound="0" selected="1" motType="5" TTB="1" STT="0" ROP="0" type="unknown" spTr="">
+				<itdNoTrain name="Stadtbus"/>
+				<motDivaParams project="j17" network="vor" line="2328A" supplement=" " direction="R"/>
+				<itdOperator>
+					<code>04</code>
+					<name>Wiener Linien</name>
+				</itdOperator>
+			</itdServingLine>
+		</itdServingLines>
+		<itdDepartureList>
+			<itdDeparture stopID="60201858" x="1831391" y="5849211" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="1" platform="1-U1" platformName="1" countdown="1">
+				<itdDateTime>
+					<itdDate day="7" month="4" year="2017" weekday="6"/>
+					<itdTime hour="16" minute="43" ap=""/>
+				</itdDateTime>
+				<itdServingLine key="2237" code="1" number="U1" symbol="U1" direction="Wien Leopoldau" realtime="0" motType="2">
+					<itdNoTrain name="U-Bahn"/>
+					<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="H"/>
+				</itdServingLine>
+			</itdDeparture>
+			<itdDeparture stopID="60201858" x="1831379" y="5849210" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="1" platform="2-U1" platformName="2" countdown="2">
+				<itdDateTime>
+					<itdDate day="7" month="4" year="2017" weekday="6"/>
+					<itdTime hour="16" minute="45" ap=""/>
+				</itdDateTime>
+				<itdServingLine key="2030" code="1" number="U1" symbol="U1" direction="Wien Reumannplatz" realtime="0" motType="2">
+					<itdNoTrain name="U-Bahn"/>
+					<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="R"/>
+				</itdServingLine>
+			</itdDeparture>
+			<itdDeparture stopID="60201858" x="1831391" y="5849211" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="1" platform="1-U1" platformName="1" countdown="3">
+				<itdDateTime>
+					<itdDate day="7" month="4" year="2017" weekday="6"/>
+					<itdTime hour="16" minute="46" ap=""/>
+				</itdDateTime>
+				<itdServingLine key="2247" code="1" number="U1" symbol="U1" direction="Wien Leopoldau" realtime="0" motType="2">
+					<itdNoTrain name="U-Bahn"/>
+					<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="H"/>
+				</itdServingLine>
+			</itdDeparture>
+			<itdDeparture stopID="60201858" x="1831498" y="5848975" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="6" platform="28A" platformName="" countdown="4">
+				<itdDateTime>
+					<itdDate day="7" month="4" year="2017" weekday="6"/>
+					<itdTime hour="16" minute="47" ap=""/>
+				</itdDateTime>
+				<itdServingLine key="1647" code="3" number="28A" symbol="28A" direction="Wien Floridsdorf S+U" realtime="0" motType="5">
+					<itdNoTrain name="Stadtbus"/>
+					<motDivaParams project="j17" network="vor" line="2328A" supplement=" " direction="R"/>
+				</itdServingLine>
+			</itdDeparture>
+			<itdDeparture stopID="60201858" x="1831379" y="5849210" mapName="MRCV" stopName="Wien Aderklaaer Straße" area="1" platform="2-U1" platformName="2" countdown="5">
+				<itdDateTime>
+					<itdDate day="7" month="4" year="2017" weekday="6"/>
+					<itdTime hour="16" minute="48" ap=""/>
+				</itdDateTime>
+				<itdServingLine key="2036" code="1" number="U1" symbol="U1" direction="Wien Reumannplatz" realtime="0" motType="2">
+					<itdNoTrain name="U-Bahn"/>
+					<motDivaParams project="j17" network="vor" line="210U1" supplement=" " direction="R"/>
+				</itdServingLine>
+			</itdDeparture>
+		</itdDepartureList>
+	</itdDepartureMonitorRequest>
+</itdRequest>
