@@ -16,27 +16,26 @@ var getStationId = (station, dictionary) => {
 var startSession = (stationId, callback) => {
 
   var urlStartSession = `http://www.wienerlinien.at/ogd_routing/XML_DM_REQUEST?sessionID=0&locationServerActive=1&type_dm=stop&limit=10&name_dm=${stationId}`;
-  var sessionId = '';
 
   axios.get(urlStartSession).then(result => {
     if (result.data && result.status == 200) {
 
       var xmlRes = et.parse(result.data);
-      sessionId = xmlRes.find('./').get('sessionID'); //TODO!
+      var sessionId = xmlRes.find('./').get('sessionID');
 
       console.log(sessionId);
 
       if (!sessionId || typeof sessionId == 'undefined' || sessionId == '') {
         // no sessionId
         console.log('No sessionId found');
-        sessionId = '';
+        return callback('');
       }
       return callback(sessionId);
 
     } else {
       // call 1 failed
       console.log('startSession failed');
-      return callback(sessionId);
+      return callback('');
     }
 
   });
@@ -52,11 +51,8 @@ var getDepartures = (sessionId, callback) => {
       var xmlRes = et.parse(result.data);
       var departuresArray = xmlRes.find('*/itdDepartureList').findall('./itdDeparture');
 
-      //console.log(departuresArray);
-
       // build lines and directions list
 
-      //var linesArray = [];
       var directionsArray = [];
       var resultArray = [];
       /* Ex:
@@ -96,6 +92,7 @@ var getDepartures = (sessionId, callback) => {
               resultArray[directionIndex]['departures'] = [];
             }
 
+            // add departure time
             var h = timeTag.get('hour');
             var m = timeTag.get('minute');
             var time = `${h}:${m}`;
@@ -108,13 +105,14 @@ var getDepartures = (sessionId, callback) => {
 
       // sort by line
       resultArray = resultArray.sort(sortObjectsByLine);
-      console.log(resultArray);
+      //console.log(resultArray);
 
       return callback(resultArray);
 
     } else {
       // call 2 failed
       console.log('getDepartures failed');
+      return callback('');
     }
 
   });
