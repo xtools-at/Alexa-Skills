@@ -8,7 +8,7 @@ module.exports = app => {
       return {
         ssml: true,
         text: app.t('textSpellOut', {attrs}),
-        end: false
+        end: true
       };
     } else {
       return {

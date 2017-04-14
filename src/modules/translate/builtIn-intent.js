@@ -9,7 +9,7 @@ module.exports = app => {
   app.builtInIntent('no', () => {
     return {
       text: '',
-      end: false
+      end: true
     };
   });
 };
