@@ -29,7 +29,7 @@ module.exports = app => {
           monitor.getDepartures(sessionId, function (departures) {
             if (departures !== '') {
 
-              // build response string
+              // build response strings
               var responseString = '<speak>';
               var cardString = '';
 

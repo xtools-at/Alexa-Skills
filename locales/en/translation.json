@@ -1,9 +1,148 @@
 {
   "LaunchRequest": {
-    "text": "Frage mich nach Wörtern oder kurzen Sätzen in einer Fremdsprache"
+    "text": "Frage mich nach einer U-Bahn Station in Wien und ich sage dir die nächsten Abfartszeiten"
   },
   "SessionEndedRequest": {
     "text": "Tschüss"
+  },
+  "HelpIntent": {
+    "utterances": [
+      "hilfe",
+      "hilfe bitte",
+      "bitte hilfe",
+      "starte hilfe",
+      "hilf mir",
+      "hilf mir bitte",
+      "was kann ich sagen",
+      "kannst du mir helfen",
+      "kannst du mir bitte helfen"
+    ],
+    "text": "<speak>Ich kenne alle Wiener U-Bahn Stationen. Jetzt wo du den Skill gestartet hast, probiere folgenden Befehl: <s>Station Reumannplatz</s>. Du kannst mich auch direkt Fragen, sage dafür <s>Alexa, frag U-Bahn Wien nach Reumannplatz</s></speak>"
+  },
+  "MonitorIntent": {
+    "utterances": [
+      "nach {station:Station}",
+      "nach Abfahrtszeiten von {station:Station}",
+      "wegen {station:Station}",
+      "wegen Abfahrtszeiten von {station:Station}",
+      "Abfahrtszeiten von {station:Station}",
+      "Abfahrt von {station:Station}",
+      "Station {station:Station}",
+      "von {station:Station}",
+      "{station:Station}"
+    ],
+    "text": "{{departures.line}} Richtung {{departures.line}}: ",
+    "errorStationNotRecognized": "Entschuldige, diese Station habe ich leider nicht erkannt. Bitte versuche es nochmals",
+    "errorApi": "Entschuldige, beim Abrufen der Daten von Wiener Linien ist ein Problem aufgetreten. Bitte versuche es nochmals",
+    "cardTitle": "Abfahrten für {{slots.station}}",
+    "dictionary": {
+      "aderklaaer straße": "60201858",
+      "alte donau": "60200031",
+      "donauinsel": "60200234",
+      "großfeldsiedlung": "60201859",
+      "kagran": "60200627",
+      "kagraner platz": "60200633",
+      "kaisermühlen": "60200641",
+      "vienna international center": "60200641",
+      "keplerplatz": "60200666",
+      "leopoldau": "60200769",
+      "nestroyplatz": "60200916",
+      "rennbahnweg": "60201860",
+      "reumannplatz": "60201095",
+      "südtiroler platz": "60201349",
+      "hauptbahnhof": "60201349",
+      "taubstummengasse": "60201366",
+      "vorgartenstraße": "60201433",
+      "praterstern": "60201040",
+      "schwedenplatz": "60201198",
+      "aspern nord": "60200910",
+      "aspernstraße": "60200299",
+      "donaumarina": "60200282",
+      "donauspital": "60201278",
+      "donaustadtbrücke": "60200290",
+      "hardeggasse": "60200473",
+      "hausfeldstraße": "60200487",
+      "krieau": "60201893",
+      "messe prater": "60201892",
+      "messe": "60201892",
+      "messe-prater": "60201892",
+      "museumsquartier": "60200835",
+      "rathaus": "60201072",
+      "schottentor": "60201184",
+      "seestadt": "60200942",
+      "stadion": "60201894",
+      "stadlau": "60201299",
+      "taborstraße": "60201891",
+      "volkstheater": "60201430",
+      "schottenring": "60201182",
+      "karlsplatz": "60200657",
+      "enkplatz": "60200425",
+      "erdberg": "60200289",
+      "gasometer": "60201749",
+      "herrengasse": "60200506",
+      "hütteldorfer straße": "60201035",
+      "johnstraße": "60200606",
+      "kardinal-nagl-platz": "60200653",
+      "kendlerstraße": "60201317",
+      "neubaugasse": "60200056",
+      "ottakring": "60200981",
+      "rochusgasse": "60201104",
+      "schlachthausgasse": "60201199",
+      "schweglerstraße": "60201200",
+      "simmering": "60201260",
+      "stubentor": "60200245",
+      "zieglergasse": "60201530",
+      "zippererstraße": "60200399",
+      "stephansplatz": "60201320",
+      "braunschweiggasse": "60200161",
+      "friedensbrücke": "60200357",
+      "heiligenstadt": "60200491",
+      "hietzing": "60200520",
+      "hütteldorf": "60200560",
+      "kettenbrückengasse": "60200670",
+      "margaretengürtel": "60200827",
+      "meidling hauptstraße": "60200863",
+      "meidlinger hauptstraße": "60200863",
+      "ober st. veit": "60200956",
+      "pilgramgasse": "60201018",
+      "roßauer lände": "60201124",
+      "schönbrunn": "60201211",
+      "stadtpark": "60201305",
+      "unter st. veit": "60201404",
+      "wien mitte landstraße": "60200743",
+      "landstraße": "60200743",
+      "wien mitte": "60200743",
+      "längenfeldgasse": "60200820",
+      "alser straße": "60200027",
+      "alterlaa": "60201499",
+      "am schöpfwerk": "60200048",
+      "meidling": "60201015",
+      "burggasse stadthalle": "60200188",
+      "burggasse": "60200188",
+      "stadthalle": "60200188",
+      "dresdner straße": "60200500",
+      "erlaaer straße": "60200285",
+      "floridsdorf": "60200334",
+      "gumpendorfer straße": "60200436",
+      "handelskai": "60201705",
+      "jägerstraße": "60201667",
+      "josefstädter straße": "60200615",
+      "michelbeuern akh": "60200874",
+      "michelbeuern": "60200874",
+      "akh": "60200874",
+      "neue donau": "60201668",
+      "niederhofstraße": "60200937",
+      "nußdorfer straße": "60200950",
+      "perfektastraße": "60201007",
+      "siebenhirten": "60201235",
+      "thaliastraße": "60201372",
+      "tscherttegasse": "60201394",
+      "währinger straße volksoper": "60201510",
+      "währinger straße": "60201510",
+      "volksoper": "60201510",
+      "westbahnhof": "60201468",
+      "spittelau": "60201062"
+    }
   },
   "DefaultActionFail": {
     "text": "Das ist was falsch gelaufen"
@@ -32,126 +171,11 @@
       "nope"
     ]
   },
-  "HelpIntent": {
-    "utterances": [
-      "hilfe",
-      "hilfe bitte",
-      "bitte hilfe",
-      "starte hilfe",
-      "hilf mir",
-      "hilf mir bitte",
-      "was kann ich sagen",
-      "kannst du mir helfen",
-      "kannst du mir bitte helfen"
-    ],
-    "text": "<speak>Am besten sagst du zuerst die gewünschte Sprache und dann das Wort oder den Satz, den ich übersetzen soll. Zum Beispiel <s>Was ist auf Englisch</s><s>Mein Name ist Alexa</s>. Für weitere Optionen, sage <s>mehr Hilfe</s></speak>"
-  },
-  "MoreHelpIntent": {
-    "utterances": [
-      "mehr hilfe",
-      "mehr info"
-    ],
-    "text": "<speak>Um zu erfahren, welche Sprachen du verwenden kannst, sage <s>Verfügbare Sprachen</s>. Ich kann auch versuchen, die Übersetzung auszusprechen, mit lustigen Ergebnissen. Sage hierfür <s>sag es</s> nach einer Übersetzung. Ich buchstabiere es dir auch gerne, wenn du <s>buchstabiere das</s> sagst</speak>"
-  },
-  "AvailableLanguagesIntent": {
-    "utterances": [
-      "sprache",
-      "sprachen",
-      "verfügbare sprachen",
-      "welche sprache",
-      "welche sprachen",
-      "welche sprachen kennst du"
-    ],
-    "text": "Ich kenne 30 Sprachen. Bosnisch, Bulgarisch, Dänisch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Italienisch, Katalanisch, Klingonisch, Kroatisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Slowakisch, Slowenisch, Spanisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Walisisch. Puh."
-  },
-  "SayItIntent": {
-    "utterances": [
-      "sag es",
-      "sag das",
-      "sprich es aus",
-      "sprich das aus"
-    ],
-    "text": "{{attrs.lastPhrase}}",
-    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
-  },
-  "SpellItIntent": {
-    "utterances": [
-      "buchstabiere das",
-      "buchstabiere es",
-      "buchstabieren"
-    ],
-    "text": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>",
-    "errorNoPhrase": "Frage mich zuerst nach einer Übersetzung"
-  },
-  "YesIntent": {
+    "YesIntent": {
     "utterances": [
       "ja",
       "ja bitte",
       "yes"
-    ],
-    "textSpellOut": "<speak><say-as interpret-as=\"spell-out\">{{attrs.lastPhrase}}</say-as></speak>"
-  },
-  "TranslateIntent": {
-    "utterances": [
-      "auf {language:Language} {phrase:Phrase}",
-      "in {language:Language} {phrase:Phrase}",
-      "übersetze auf {language:Language} {phrase:Phrase}",
-      "übersetze in {language:Language} {phrase:Phrase}",
-      "übersetze {phrase:Phrase} auf {language:Language}",
-      "übersetze {phrase:Phrase} in {language:Language}",
-      "was ist auf {language:Language} {phrase:Phrase}",
-      "was ist in {language:Language} {phrase:Phrase}",
-      "was ist {phrase:Phrase} auf {language:Language}",
-      "was ist {phrase:Phrase} in {language:Language}",
-      "wie heißt auf {language:Language} {phrase:Phrase}",
-      "wie heißt in {language:Language} {phrase:Phrase}",
-      "wie heißt {phrase:Phrase} auf {language:Language}",
-      "wie heißt {phrase:Phrase} in {language:Language}",
-      "wie geht auf {language:Language} {phrase:Phrase}",
-      "wie geht in {language:Language} {phrase:Phrase}",
-      "wie geht {phrase:Phrase} auf {language:Language}",
-      "wie geht {phrase:Phrase} in {language:Language}",
-      "{phrase:Phrase} auf {language:Language}",
-      "{phrase:Phrase} in {language:Language}"
-    ],
-    "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt. Soll ich sie für dich buchstabieren?",
-    "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt",
-    "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt",
-    "cardTitle": "Universal Übersetzer",
-    "cardContent": "\"{{slots.phrase}}\" heißt auf {{slots.language}} \"{{translatedText}}\"",
-    "dictionary": {
-      "bulgarisch": "bg",
-      "bosnisch": "bs",
-      "katalanisch": "ca",
-      "tschechisch": "cs",
-      "walisisch": "cy",
-      "dänisch": "da",
-      "deutsch": "de",
-      "griechisch": "el",
-      "englisch": "en",
-      "spanisch": "es",
-      "estnisch": "et",
-      "finnisch": "fi",
-      "französisch": "fr",
-      "kroatisch": "hr",
-      "ungarisch": "hu",
-      "italienisch": "it",
-      "litauisch": "lt",
-      "lettisch": "lv",
-      "norwegisch": "nb",
-      "niederländisch": "nl",
-      "polnisch": "pl",
-      "portugiesisch": "pt",
-      "rumänisch": "ro",
-      "russisch": "ru",
-      "slowakisch": "sk",
-      "slowenisch": "sl",
-      "serbisch": "sr-Latn",
-      "schwedisch": "sv",
-      "klingonisch": "tlh",
-      "türkisch": "tr",
-      "ukrainisch": "uk"
-    },
-    "langFrom" : "de"
+    ]
   }
 }

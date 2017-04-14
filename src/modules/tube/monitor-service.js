@@ -7,7 +7,7 @@ var availableLines = ['U1', 'U2', 'U3', 'U4', 'U6'];
 
 var getStationId = (station, dictionary) => {
   try {
-    return dictionary[station];
+    return dictionary[station.toLowerCase()];
   } catch (e) {
     console.log(e);
   }
@@ -88,7 +88,7 @@ var getDepartures = (sessionId, callback) => {
               // set up object skeleton
               resultArray[directionIndex] = {};
               resultArray[directionIndex]['line'] = line;
-              resultArray[directionIndex]['direction'] = direction.replace('Wien ','');
+              resultArray[directionIndex]['direction'] = direction.replace('Wien ', '');
               resultArray[directionIndex]['departures'] = [];
             }
 

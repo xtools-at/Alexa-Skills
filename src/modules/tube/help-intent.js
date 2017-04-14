@@ -9,12 +9,4 @@ module.exports = app => {
       end: false
     };
   });
-
-  app.intent('MoreHelpIntent', () => {
-    return {
-      ssml: true,
-      text: app.t('text'),
-      end: false
-    };
-  });
 };
