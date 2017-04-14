@@ -60,7 +60,7 @@ module.exports = app => {
 
               done({
                 text: responseString,
-                end: false,
+                end: true,
                 card: {
                   title: titleCase(app.t('cardTitle', {slots})),
                   content: cardString
