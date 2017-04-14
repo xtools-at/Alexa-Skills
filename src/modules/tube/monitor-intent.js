@@ -22,7 +22,7 @@ module.exports = app => {
 
     var stationId = monitor.getStationId(slots.station, dictionary);
 
-    if (stationId !== '') {
+    if (typeof stationId !== 'undefined' && stationId && stationId !== '') {
 
       monitor.startSession(stationId, function (sessionId) {
         if (sessionId !== '') {
@@ -30,21 +30,25 @@ module.exports = app => {
             if (departures !== '') {
 
               // build response strings
-              var responseString = '<speak>';
+              var responseString = `<speak>${slots.station}. `;
               var cardString = '';
+
+              // console.log(departures);
 
               for (var i = 0; i < departures.length; i++) {
                 // <s>U1 Richtung Leopoladau: 11:40, 11:50</s>
-                responseString += ('<s>' + app.t('text', {departures}));
-                cardString += app.t('text', {departures});
+                var target = departures[i];
+                responseString += ('<s>' + app.t('text', {target}));
+                cardString += app.t('text', {target});
 
-                for (var ii = 0; ii < departures.departures.length; ii++) {
-                  responseString += `<say-as interpret-as="time">${departures.departures[ii]}</say-as>`;
-                  cardString += departures.departures[ii];
+                for (var ii = 0; ii < target.departures.length; ii++) {
 
-                  if (ii == departures.departures.length - 1) {
+                  responseString += `<say-as interpret-as="time">${target.departures[ii]}</say-as>`;
+                  cardString += target.departures[ii];
+
+                  if (ii == target.departures.length - 1) {
                     // last time
-                    responseString += '.</s> ';
+                    responseString += '</s> ';
                     cardString += '. ';
                   } else {
                     responseString += ', ';
@@ -58,7 +62,7 @@ module.exports = app => {
                 text: responseString,
                 end: false,
                 card: {
-                  title: app.t('cardTitle', {slots}),
+                  title: titleCase(app.t('cardTitle', {slots})),
                   content: cardString
                 }
               });
@@ -81,11 +85,20 @@ module.exports = app => {
       });
 
     } else {
-      return {
+      done({
         text: app.t('errorStationNotRecognized'),
         end: false
-      };
+      });
     }
   });
+
+  // this coverts lowercase stations back to "Title Case Stations"
+  function titleCase (string) {
+    var splitStr = string.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(' ');
+  }
 
 };

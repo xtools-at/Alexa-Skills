@@ -7,7 +7,8 @@ var availableLines = ['U1', 'U2', 'U3', 'U4', 'U6'];
 
 var getStationId = (station, dictionary) => {
   try {
-    return dictionary[station.toLowerCase()];
+    station = station.toLowerCase();
+    return dictionary[station];
   } catch (e) {
     console.log(e);
   }
@@ -23,7 +24,7 @@ var startSession = (stationId, callback) => {
       var xmlRes = et.parse(result.data);
       var sessionId = xmlRes.find('./').get('sessionID');
 
-      console.log(sessionId);
+      // console.log(sessionId);
 
       if (!sessionId || typeof sessionId == 'undefined' || sessionId == '') {
         // no sessionId
@@ -52,7 +53,6 @@ var getDepartures = (sessionId, callback) => {
       var departuresArray = xmlRes.find('*/itdDepartureList').findall('./itdDeparture');
 
       // build lines and directions list
-
       var directionsArray = [];
       var resultArray = [];
       /* Ex:
@@ -95,6 +95,11 @@ var getDepartures = (sessionId, callback) => {
             // add departure time
             var h = timeTag.get('hour');
             var m = timeTag.get('minute');
+            m = parseInt(m);
+            if (m < 10) {
+              m = '0' + m;
+            }
+
             var time = `${h}:${m}`;
 
             resultArray[directionIndex]['departures'].push(time);
@@ -105,7 +110,7 @@ var getDepartures = (sessionId, callback) => {
 
       // sort by line
       resultArray = resultArray.sort(sortObjectsByLine);
-      //console.log(resultArray);
+      // console.log(resultArray);
 
       return callback(resultArray);
 
