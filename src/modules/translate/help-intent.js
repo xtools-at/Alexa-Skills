@@ -14,7 +14,7 @@ module.exports = app => {
     return {
       ssml: true,
       text: app.t('text'),
-      end: false
+      end: true
     };
   });
 
@@ -22,7 +22,7 @@ module.exports = app => {
     return {
       ssml: false,
       text: app.t('text'),
-      end: false
+      end: true
     };
   });
 };

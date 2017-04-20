@@ -115,8 +115,8 @@
       "{phrase:Phrase} in {language:Language}"
     ],
     "text": "Ich habe die Übersetzung für {{slots.phrase}} an deine Alexa App geschickt. Soll ich sie für dich buchstabieren?",
-    "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt",
-    "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt",
+    "errorLanguageNotRecognized": "Entschuldige, ich habe die Sprache nicht erkannt. Bitte versuche es nochmals.",
+    "errorPhraseNotRecognized": "Entschuldige, ich habe diesen Ausdruck nicht erkannt. Bitte versuche es nochmals.",
     "cardTitle": "Universal Übersetzer",
     "cardContent": "\"{{slots.phrase}}\" heißt auf {{slots.language}} \"{{translatedText}}\"",
     "dictionary": {

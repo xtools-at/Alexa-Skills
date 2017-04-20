@@ -13,7 +13,7 @@ module.exports = app => {
     } else {
       return {
         text: '',
-        end: false
+        end: true
       };
     }
   });
@@ -23,7 +23,7 @@ module.exports = app => {
       return {
         ssml: false,
         text: app.t('text', {attrs}),
-        end: false
+        end: true
       };
     } else {
       return {
@@ -38,7 +38,7 @@ module.exports = app => {
       return {
         ssml: true,
         text: app.t('text', {attrs}),
-        end: false
+        end: true
       };
     } else {
       return {
