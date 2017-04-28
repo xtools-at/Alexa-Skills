@@ -8,10 +8,10 @@ These projects are based on [Alexia Framework](https://github.com/Accenture/alex
 ### Skills
 
 - `translate` - Universal dictionary for 30 languages using Microsoft Text Translator API (Multilanguage - Alexia 2.4) `German: Certification pending` `English: Under development`
-- `tube` - Skill to retrieve departures from Vienna's Underground stations (German - Alexia 2.4) `Certification pending`
-- `currency` - A currency converter for 30 currencies, using current exchange rates (German) `Certification passed`
-- `dice` - A virtual die, allowing you to roll multiple dice with any number of sides (German) `Certification passed`
-- `nightlight` - A simple nightlight that can be turned on for a specified period of time (German) `Certification passed`
+- `tube` - Skill to retrieve departures from Vienna's Underground stations (German - Alexia 2.4) `Certification passed` [--> Get 'U-Bahn Wien' on Amazon.de](https://www.amazon.de/xTools-U-Bahn-Wien/dp/B071DDKLRZ)
+- `currency` - A currency converter for 30 currencies, using current exchange rates (German) `Certification passed` [--> Get 'Wechselstube' on Amazon.de](https://www.amazon.de/xTools-Wechselstube/dp/B01MXKBIVL)
+- `dice` - A virtual die, allowing you to roll multiple dice with any number of sides (German) `Certification passed` [--> Get 'Smart Würfel' on Amazon.de](https://www.amazon.de/xTools-Smart-W%C3%BCrfel/dp/B01N75R8Q4)
+- `nightlight` - A simple nightlight that can be turned on for a specified period of time (German) `Certification passed` [--> Get 'Nachtlicht' on Amazon.de](https://www.amazon.de/xTools-Nachtlicht/dp/B01N8R6ZDO)
 
 ### Misc
 - `master` - Upstream to merge updates from [Alexia Starter Kit](https://github.com/Accenture/alexia-starter-kit)
