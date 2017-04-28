@@ -7,18 +7,18 @@ module.exports = app => {
   app.intent('TranslateIntent', (slots, attrs, data, done) => {
 
     // check if we've got values
-    if (!slots.language) {
-      return {
+    if (!slots.language || typeof slots.language == 'undefined') {
+      done({
         text: app.t('errorLanguageNotRecognized'),
         end: false
-      };
+      });
     }
 
-    if (!slots.phrase) {
-      return {
+    if (!slots.phrase || typeof slots.phrase == 'undefined') {
+      done({
         text: app.t('errorPhraseNotRecognized'),
         end: false
-      };
+      });
     }
 
     // build translated dictionary
@@ -29,7 +29,7 @@ module.exports = app => {
 
     var languageKey = translator.getLanguageKey(slots.language, dictionary);
 
-    if (typeof languageKey !== 'undefined') {
+    if (languageKey && typeof languageKey !== 'undefined') {
       translator.translate(slots.phrase, languageKey, app.t('langFrom'), function (translatedText) {
         // console.log(translatedText);
         if (translatedText !== '') {
@@ -45,17 +45,17 @@ module.exports = app => {
             }
           });
         } else {
-          return {
+          done({
             text: app.t('errorPhraseNotRecognized'),
             end: false
-          };
+          });
         }
       });
     } else {
-      return {
+      done({
         text: app.t('errorLanguageNotRecognized'),
         end: false
-      };
+      });
     }
   });
 
